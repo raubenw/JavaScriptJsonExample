@@ -17,3 +17,19 @@ xhr.onreadystatechange = function() {
 };
 
 xhr.send();
+
+$(document).ready(function() {
+    $.getJSON('employees.json', function(data) {
+
+        var html2 = '<ul>';
+
+        $.each(data, function(index, employee) {
+            html2 += '<li>' + employee.name +'</li>';
+        });
+
+        html2 += '</ul>';
+
+        document.getElementById('employees2').innerHTML = html2;
+    });
+
+});
